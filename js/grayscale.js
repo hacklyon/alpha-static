@@ -76,6 +76,14 @@ var bg = ["bg1-1.jpg",
           "bg5-2.jpg",
           "bg6-1.jpg",
           "bg6-2.jpg"];
+/**
+https://unsplash.com/photos/_QoAuZGAoPY
+https://unsplash.com/photos/7nrsVjvALnA
+https://unsplash.com/photos/45FJgZMXCK8
+https://unsplash.com/photos/GeOws83toxc
+https://unsplash.com/photos/Pihl8kTtX-s
+https://unsplash.com/photos/tKQ9NhQVCjM
+*/
 
 var logo = document.getElementById("alpha-logo");
 var bg1 = document.getElementsByClassName("masthead")[0];
