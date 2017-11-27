@@ -207,7 +207,7 @@ footer {
     font-size: 14px;
     margin: 0; }
 
-::-moz-selection {
+/*::-moz-selection {
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
   text-shadow: none; }
@@ -215,7 +215,7 @@ footer {
 ::selection {
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
-  text-shadow: none; }
+  text-shadow: none; }*/
 
 img::selection {
   background: transparent; }
