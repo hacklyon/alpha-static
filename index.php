@@ -25,7 +25,7 @@ if (count($langs) == 0) {
         break;
   }
 }
-include("lang/fr.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $html_lang; ?>">
