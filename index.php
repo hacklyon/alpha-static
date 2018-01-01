@@ -1,8 +1,37 @@
+<?php
+require("funcs.php");
+
+$available_languages = array("en", "fr", "en-US", "fr-FR");
+$langs = prefered_language($available_languages, $_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+
+if (count($langs) == 0) {
+  require("lang/en.php");
+} else {
+  $lang = key($langs);
+  switch ($lang){
+    case "fr-FR":
+    case "fr":
+        //echo "PAGE FR";
+        include("lang/fr.php");
+        break;
+    case "en-US":
+    case "en":
+        //echo "PAGE EN";
+        include("lang/en.php");
+        break;
+    default:
+        //echo "PAGE EN - Setting Default";
+        include("lang/en.php");
+        break;
+  }
+}
+include("lang/fr.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $html_lang; ?>">
 
   <head>
-
+    <!-- <?php echo $_SERVER['HTTP_ACCEPT_LANGUAGE'] . "<br>". $lang ;?> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -49,16 +78,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#about"><?php echo $strings['about']; ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#sponsors">Partners</a>
+              <a class="nav-link js-scroll-trigger" href="#sponsors"><?php echo $strings['partners'];?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#faqs">FAQ</a>
+              <a class="nav-link js-scroll-trigger" href="#faqs"><?php echo $strings['faq'];?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact"><?php echo $strings['contact']; ?></a>
             </li>
           </ul>
         </div>
@@ -72,8 +101,8 @@
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h1 class="brand-heading alpha" id="alpha-logo">Alpha</h1>
-              <p class="intro-text">A student-run hackathon in Lyon.
-                <br>March 24/25th. 24h. 150 hackers.</p>
+              <p class="intro-text"><?php echo $strings['desc'];?>
+                <br><?php echo $strings['info'];?></p>
             </div>
             <div class="col-lg-8 mx-auto"> 
               <a href="#about" class="btn btn-circle js-scroll-trigger">
@@ -90,9 +119,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About HackLyon</h2>
-            <p>HackLyon <span class="alpha bold">Alpha</span> is the first edition of HackLyon, open to all students.</p>
-            <p>At <span class="alpha bold">Alpha</span>, as a Hacker, you will be able to hack the future of <span class="bold onblack">urban connected transports</span>.</p>
+            <h2><?php echo $strings['about_title'];?></h2>
+            <?php echo $strings['about_desc'];?>
           </div>
         </div>
       </div>
@@ -102,7 +130,7 @@
     <section id="sponsors" class="sponsors-section content-section text-center">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Partners &amp; Sponsors</h2>
+          <h2><?php echo $strings['sponsors_title'];?></h2>
         </div>
         <div class="col-md-12">
           <a href="http://www.etic-insa.com/" target="_blank">
@@ -112,8 +140,8 @@
         <hr>
         <div class="row" style="height:30px;"></div>
         <div class="col-lg-8 mx-auto">
-          <p>Do you want to see your logo here?</p>
-          <a href="mailto:partnerships@hacklyon.com" class="btn btn-default btn-lg">Contact us</a>
+          <p><?php echo $strings['sponsors_logo'];?></p>
+          <a href="mailto:partnerships@hacklyon.com" class="btn btn-default btn-lg"><?php echo $strings['sponsors_contact_button'];?></a>
         </div>
       </div>
     </section>
@@ -123,73 +151,73 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>FAQ</h2>
+            <h2><?php echo $strings['faq'];?></h2>
           </div>
           <div class="col-lg-10 col-sm-12 col-md-12 mx-auto">
             <div class="row">
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What is HackLyon?</h5>
-                <p>HackLyon is a student run hackathon held at Doua campus. It will take place on March 24th and 25th.</p>
+                <h5><?php echo $strings['faq_q_what_hl'];?></h5>
+                <p><?php echo $strings['faq_a_what_hl'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What is a hackathon?</h5>
-                <p>A hackathon is an event in which computer programmers and others in the field of software development, like graphic designers, interface designers and project managers collaborate intensively on software-related projects.</p>
+                <h5><?php echo $strings['faq_q_what'];?></h5>
+                <p><?php echo $strings['faq_a_what'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>Who can apply?</h5>
-                <p>If you are a student and over 18 you are welcome to HackLyon! If you graduated less than a year ago, you are very welcome to!</p>
+                <h5><?php echo $strings['faq_q_who'];?></h5>
+                <p><?php echo $strings['faq_a_who'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>How much does it cost to attend?</h5>
-                <p>Zero. Cero. Zéro. Null.</p>
+                <h5><?php echo $strings['faq_q_how_much'];?></h5>
+                <p><?php echo $strings['faq_a_how_much'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What is the maximum size of a team?</h5>
-                <p>Teams can be up to 5 students. If you don't have a team, we will help you to find one at the beginning of the event.</p>
+                <h5><?php echo $strings['faq_q_maxsize_team'];?></h5>
+                <p><?php echo $strings['faq_a_maxsize_team'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>How can I form my team?</h5>
-                <p>Teams can be pre-made or done at the beginning of the event. We will help you find one if need be.</p>
+                <h5><?php echo $strings['faq_q_how_team'];?></h5>
+                <p><?php echo $strings['faq_a_how_team'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>Will there be any travel reimbursements?</h5>
-                <p>We are unable to provide this information at the moment.</p>
+                <h5><?php echo $strings['faq_q_travel_reimbursements'];?></h5>
+                <p><?php echo $strings['faq_a_travel_reimbursements'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>Code of Conduct?</h5>
-                <p>It will be available soon.</p>
+                <h5><?php echo $strings['faq_q_code_conduct'];?></h5>
+                <p><?php echo $strings['faq_a_code_conduct'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What about sleep?</h5>
-                <p>Classrooms will be available to get a nap. Don't forget to bring a sleeping bag and a pillow.</p>
+                <h5><?php echo $strings['faq_q_sleep'];?></h5>
+                <p><?php echo $strings['faq_a_sleep'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What do I need to bring?</h5>
-                <p>We put food, power and wifi. You just need to bring a laptop and a charger.</p>
+                <h5><?php echo $strings['faq_q_what_bring'];?></h5>
+                <p><?php echo $strings['faq_a_what_bring'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>Who owns the intellectual property of hacks?</h5>
-                <p>All the hacks belong to hackers.</p>
+                <h5><?php echo $strings['faq_q_who_copyright'];?></h5>
+                <p><?php echo $strings['faq_a_who_copyright'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>What about the schedule?</h5>
-                <p>We will make it available closer to the event.</p>
+                <h5><?php echo $strings['faq_q_schedule'];?></h5>
+                <p><?php echo $strings['faq_a_schedule'];?></p>
               </div>
 
               <div class="col-lg-4 col-sm-6 col-md-6">
-                <h5>Where can I ask more questions?</h5>
-                <p>You can drop us a line at <a href="mailto:info@hacklyon.com">info@hacklyon.com</a> or check the <a class=" js-scroll-trigger" href="#contact">contact</a> section.</p>
+                <h5><?php echo $strings['faq_q_questions'];?></h5>
+                <p><?php echo $strings['faq_a_questions'];?></p>
               </div>
 
 
@@ -204,8 +232,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact HackLyon</h2>
-            <p>Feel free to drop us a line at <a href="mailto:hello@hacklyon.com">hello@hacklyon.com</a> and check our social profiles!</p>
+            <h2><?php echo $strings['contact_title'];?></h2>
+            <p><?php echo $strings['contact_email'];?></p>
             <ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
                 <a href="https://twitter.com/hacklyon" class="btn btn-default btn-lg">
