@@ -297,6 +297,9 @@ if (count($langs) == 0) {
         gtag('config', 'UA-111557657-1');
     </script>
 
+    <!-- Cookie bar JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=grey&thirdparty=1"></script>
+
 
   </body>
 
