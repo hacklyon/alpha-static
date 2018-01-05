@@ -101,8 +101,8 @@ if (count($langs) == 0) {
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h1 class="brand-heading alpha" id="alpha-logo">Alpha</h1>
-              <p class="intro-text"><?php echo $strings['desc'];?>
-                <br><?php echo $strings['info'];?></p>
+              <p class="intro-text"><?php /*echo $strings['desc']."<br>";*/?>
+                <?php echo $strings['info'];?></p>
             </div>
             <div class="col-lg-8 mx-auto"> 
               <a href="#about" class="btn btn-circle js-scroll-trigger">
