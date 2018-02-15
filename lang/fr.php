@@ -10,7 +10,7 @@ $strings['faq'] = "FAQ";
 $strings['contact'] = "Contact";
 
 // INTRO
-$strings['info'] = "Mars 24/25. 24h. 150 hackers.";
+$strings['info'] = "More info comming soon";//"Mars 24/25. 24h. 150 hackers.";
 $strings['desc'] = "Un hackathon étudiant à Lyon.";
 
 // SECTIONS
@@ -28,7 +28,7 @@ $strings['sponsors_contact_button'] = "Contactez nous";
 
 // S-FAQS
 $strings['faq_q_what_hl'] = "Qu'est-ce que HackLyon&nbsp;?";
-$strings['faq_a_what_hl'] = "HackLyon est un hackathon tenu par des étudiants sur le campus de Doua. Il aura lieu les 24 et 25 mars.";
+$strings['faq_a_what_hl'] = "HackLyon est un hackathon tenu par des étudiants sur le campus de Doua.";//" Il aura lieu les 24 et 25 mars.";
 $strings['faq_q_what'] = "Qu'est-ce qu'un hackathon&nbsp;?";
 $strings['faq_a_what'] = "Un hackathon est un événement dans lequel des programmeurs et d'autres acteurs dans le domaine du développement logiciel, comme les concepteurs graphiques et les chefs de projet collaborent intensivement sur des projets liés au logiciel. Un hack est une bonne solution ou un conseil (Cambridge Dictionnary). Le verbe hacker, souvent mal utilisé, signifie \"Modifier, Améliorer\" ou encore \"Bricoler\".";
 $strings['faq_q_who'] = "Qui peut postuler&nbsp;?";

@@ -10,7 +10,7 @@ $strings['faq'] = "FAQ";
 $strings['contact'] = "Contact";
 
 // INTRO
-$strings['info'] = "March 24/25th. 24h. 150 hackers.";
+$strings['info'] = "More info comming soon";//"March 24/25th. 24h. 150 hackers.";
 $strings['desc'] = "A student-run hackathon in Lyon.";
 
 // SECTIONS
@@ -27,7 +27,7 @@ $strings['sponsors_contact_button'] = "Contact us";
 
 // S-FAQS
 $strings['faq_q_what_hl'] = "What is HackLyon?";
-$strings['faq_a_what_hl'] = "HackLyon is a student run hackathon held at Doua campus. It will take place on March 24th and 25th.";
+$strings['faq_a_what_hl'] = "HackLyon is a student run hackathon held at Doua campus.";//" It will take place on March 24th and 25th.";
 $strings['faq_q_what'] = "What is a hackathon?";
 $strings['faq_a_what'] = "A hackathon is an event in which computer programmers and others in the field of software development, like graphic designers, interface designers and project managers collaborate intensively on software-related projects.";
 $strings['faq_q_who'] = "Who can apply?";
