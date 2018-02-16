@@ -118,6 +118,7 @@ $("#newsletter").submit(()=>{
       data = JSON.parse(data);
       if (data.status === 'ok') {
         $(".newsletter").notify(data.message, "success");
+        $("#email-newsletter").val("")
       } else {
         for (var i = data.error.length - 1; i >= 0; i--) {
           $.notify(data.error[i]);
