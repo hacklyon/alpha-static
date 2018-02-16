@@ -3,7 +3,7 @@
 require("../config.php");
 
 $output = [];
-$output = ['status'] = "nok";
+$output['status'] = "nok";
 
 do {
 	//Check HTTP Method
