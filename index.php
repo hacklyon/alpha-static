@@ -104,6 +104,13 @@ if (count($langs) == 0) {
               <p class="intro-text"><?php /*echo $strings['desc']."<br>";*/?>
                 <?php echo $strings['info'];?></p>
             </div>
+            <div class="col-lg-8 mx-auto">
+              <p><?php echo $strings['newsletter']; ?></p>
+              <form action="" id="newsletter">
+                <input id="email-newsletter" type="email" required placeholder="Email..">
+                <input class="newsletter" type="submit" value="Yep">
+              </form>
+            </div>
             <div class="col-lg-8 mx-auto"> 
               <a href="#about" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>

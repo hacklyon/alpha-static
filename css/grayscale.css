@@ -276,3 +276,24 @@ body {
     width: 85%
   }
 }
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #42DCA3;
+    border: none;
+    color: white;
+    padding: 13px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #42DCA3;
+}
+#email-newsletter {
+  width: 80%;
+}

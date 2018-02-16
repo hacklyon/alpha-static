@@ -109,6 +109,17 @@ var goToColor = function(inter){
 
 //goToColor(0);
 
+$("#newsletter").submit(()=>{
+  var email = $("#email-newsletter").val();
+  
+  $.post( window.location.href + "newsletter/new.php", { mail: email } )
+    .done((data) => {
+      console.log(data);
+    });
+
+  return false;
+})
+
 // Google Maps Scripts
 var map = null;
 // When the window has finished loading create our google map below

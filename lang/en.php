@@ -12,6 +12,7 @@ $strings['contact'] = "Contact";
 // INTRO
 $strings['info'] = "More info comming soon";//"March 24/25th. 24h. 150 hackers.";
 $strings['desc'] = "A student-run hackathon in Lyon.";
+$strings['newsletter'] = "Want to know when new info is available?";
 
 // SECTIONS
 // **********
