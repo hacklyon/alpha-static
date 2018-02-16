@@ -294,6 +294,9 @@ if (count($langs) == 0) {
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
+
+    <!-- Notify js -->
+    <script type="text/javascript" src="js/notify.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111557657-1"></script>
     <script>

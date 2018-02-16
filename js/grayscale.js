@@ -115,6 +115,17 @@ $("#newsletter").submit(()=>{
   $.post( window.location.href + "newsletter/new.php", { mail: email } )
     .done((data) => {
       console.log(data);
+      data = JSON.parse(data);
+      if (data.status === 'ok') {
+        $(".newsletter").notify(data.message, "success");
+      } else {
+        for (var i = data.error.length - 1; i >= 0; i--) {
+          $.notify(data.error[i]);
+        }
+      }
+    })
+    .fail(()=>{
+      $.notify("Something went wrong :/");
     });
 
   return false;
